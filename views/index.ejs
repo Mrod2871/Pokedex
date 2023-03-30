@@ -7,6 +7,14 @@
     <title>Pokedex</title>
 </head>
 <body>
-    
+    <h1>Pokemon</h1>
+    <ul>
+        <% for(let i = 0; i < data.length; i++) {%>
+        <li>
+            <img src='<%=data[i].img%>'/>
+            <%console.log(data[i].img)%>
+        </li>
+        <% } %>
+    </ul>
 </body>
 </html>
