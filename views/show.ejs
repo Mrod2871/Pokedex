@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
     <title>Pokedex</title>
 </head>
 <body>
     <h1><%=data.name%></h1>
+    <img src='<%=data.img%>'/>
+    <ul>
+        <li>
+            <h3>Type= <%= data.type %></h3>
+            <div class="pokemonstats">
+                <h3>Stats= </h3>
+                HP: <%= data.stats.hp %>
+                Attack: <%= data.stats.attack %>
+                Defense: <%= data.stats.defense%>
+                Special Attack: <%= data.stats.spattack %>
+                Special Defense: <%= data.stats.spdefense %>
+                Speed:<%= data.stats.hp %>
+            </div>
+            <a href="/">Go Back</a>
+            <p></p>
+        </li>
+    </ul>
 </body>
 </html>
