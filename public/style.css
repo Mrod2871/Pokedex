@@ -1,3 +1,7 @@
+#img {
+    width: 640px;
+    height: 240px;
+}
 ul {
     display: flex;
     flex-direction: row;
@@ -8,4 +12,25 @@ img {
     width: 100px ;
     height: 100px;
     padding: 30px;
+}
+#li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#anchor {
+    background-color: rgba(131, 186, 236, 0.699);
+    padding: 10px;
+    text-decoration: none;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: salmon;
+}
+#pokemonStats {
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }

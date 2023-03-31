@@ -11,7 +11,7 @@
     <h1>Edit Pokemon</h1>
     <h2><%=data.name%></h2>
     <img src='<%=data.img%>'/>
-    <form action="/<%= %>?_method=PUT" method="POST">
+    <form action="/<%=i%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%=data.name%>">
         Type: <input type="text" name="type" value="<%=data.type%>">
         HP: <input type="text" name="stats[hp]" 
@@ -22,6 +22,7 @@
         value="<%= data.stats.defense %>"/><br />
         Special Attack: <input type="text" name="stats[spattack]" value="<%= data.stats.spattack %>"/><br />
         Special Defense: <input type="text" name="stats[spdefense]" value="<%=data.stats.spdefense %>"><br />
+        Edit Image: <input type="hidden" name="img" value="<%=data.img %>"/>
         <br/>
         <input type="submit" name="" value="Submit Changes" />
     </form>

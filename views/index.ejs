@@ -8,13 +8,13 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <h1>Pokemon</h1>
-    <a href="/new">Create a Pokemon</a>
+    <img id="img" src="https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png"></img>
+    <a id="anchor" href="/new">Create a Pokemon</a>
     <ul>
         <% for(let i = 0; i < data.length; i++) { %>
-        <li>
+        <li id="li">
             <a href="/<%=i%>"<%=data[i].name %>><img src='<%=data[i].img%>'/></a>
-            <form action="/<%=i %>?_method=DELETE" method="POST" >
+            <form id="form"action="/<%=i %>?_method=DELETE" method="POST" >
             <input type="submit" value="DELETE">
             </form>
             <a href="/<%=i %>/edit">Edit</a>

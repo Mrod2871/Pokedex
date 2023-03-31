@@ -2,7 +2,7 @@
 const express = require('express');
 const methodOverride = require('method-override')
 const app = express();
-const port = 3000
+const port = 3001
 const pokemon = require('./models/pokemon.js');
 
 
@@ -23,7 +23,7 @@ app.get('/new', (req, res) => {
 })
 
 //Destroy
-app.delete('/:id', (req, res)=> {
+app.delete('/:id', (req, res) => {
     pokemon.splice(req.params.id, 1)
     res.redirect('/')
 })
@@ -31,20 +31,21 @@ app.delete('/:id', (req, res)=> {
 //Update
 app.put('/:id', (req, res) => {
     pokemon[req.params.id] = req.body
-    res.redirect(`/`)
+    res.redirect('/')
 })
 
 //Create
-app.post('/', (req, res)=> {
+app.post('/', (req, res) => {
     pokemon.push(req.body)
     res.redirect('/')
 })
 
 //Edit
-app.get('/:id/edit', (req,res)=> {
+app.get('/:id/edit', (req,res) => {
     res.render('edit.ejs', 
     {
-        data: pokemon[req.params.id] 
+        data: pokemon[req.params.id],
+        i: req.params.id,
     })
 })
 
@@ -52,7 +53,8 @@ app.get('/:id/edit', (req,res)=> {
 app.get('/:id', (req, res) => {
 res.render('show.ejs', 
     { 
-        data: pokemon[req.params.id] 
+        data: pokemon[req.params.id],
+        i: req.params.id
     });
 });
 
